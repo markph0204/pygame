@@ -106,7 +106,7 @@ set +e
 # TODO: tap-pin deprecated. Need `brew install pygame/portmidi/sdl2`
 #       https://github.com/pygame/pygame/issues/1272
 brew tap pygame/portmidi
-brew tap-pin pygame/portmidi
+# brew tap-pin pygame/portmidi
 
 check_local_bottles
 
