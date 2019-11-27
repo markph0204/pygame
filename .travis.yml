@@ -13,7 +13,9 @@ cache:
 # So commits do not get built twice.
 # Only test master and tagged releases on push
 #   always test things that aren't pushes (like PRs)
-if: type != push OR branch = master OR branch =~ /^\d+\.\d+(\.\d+)?(-\S*)?$/ OR tag ~= /^\d+\.\d+(\.\d+)?(.\S*)?$/
+#   /^\d+\.\d+(\.\d+)?(-\S*)?$/ == major.minor.rev  e.g.  2.13.145
+#   /^issue\/(\d+)[a-z-]*$/  == branch name 'issue/1506' OR 'issue/993-this-is-a-bug'
+if: type != push OR branch = master OR branch =~ /^\d+\.\d+(\.\d+)?(-\S*)?$/ OR tag ~= /^\d+\.\d+(\.\d+)?(.\S*)?$/ OR branch =~ /^issue\/(\d+)[a-z-]*$/
 
 
 matrix:
